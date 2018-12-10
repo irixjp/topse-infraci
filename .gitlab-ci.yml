@@ -1,0 +1,24 @@
+---
+stages:
+  - test
+
+test1:
+  stage: test
+  script:
+    - echo hello
+  tags:
+    - docker
+
+test2:
+  stage: test
+  script:
+    - echo hello
+  tags:
+    - molecule
+
+test3:
+  stage: test
+  script:
+    - echo hello
+  tags:
+    - unit

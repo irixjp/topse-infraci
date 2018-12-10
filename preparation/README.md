@@ -40,11 +40,12 @@ docker-compose up -d
 
 GitLabへログイン可能になったら以下を実行
 ```
+RUNNER_HOST=gitlab-runner-1
 RUNNER_TOKEN=token-AABBCCDD
 RUNNER_TAG=docker
 BASE_IMAGE=centos:latest
 
-docker exec gitlab-runner \
+docker exec ${RUNNER_HOST:?} \
        gitlab-runner register \
        --non-interactive \
        --url http://192.168.33.10 \
